@@ -36,7 +36,10 @@ export default function Example() {
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
-            <div key={product.id} className="group relative">
+            <div
+              key={product.id}
+              className="p-4 border border-gray-300 rounded group relative"
+            >
               <img
                 alt={product.slug}
                 src={product.images[0]}
@@ -54,10 +57,12 @@ export default function Example() {
                     {product.category.name}
                   </p>
                 </div>
-                <p className="text-sm font-medium text-gray-900">
-                  {product.price}
-                </p>
               </div>
+              <span className="absolute bottom-1">
+                <p className="text-sm font-medium text-gray-900 ">
+                  {`R$ ${product.price}`}
+                </p>
+              </span>
             </div>
           ))}
         </div>
