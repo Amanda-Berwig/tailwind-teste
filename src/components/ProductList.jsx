@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import buscarDados from "./BuscarDados";
+import AddToCart from "./AddToCart";
 
 // const products = [
 //   {
@@ -38,7 +39,7 @@ export default function Example() {
           {products.map((product) => (
             <div
               key={product.id}
-              className="p-4 border border-gray-300 rounded group relative"
+              className="p-4 border border-gray-300 pb-14 rounded group relative"
             >
               <img
                 alt={product.slug}
@@ -58,11 +59,14 @@ export default function Example() {
                   </p>
                 </div>
               </div>
-              <span className="absolute bottom-1">
-                <p className="text-sm font-medium text-gray-900 ">
-                  {`R$ ${product.price}`}
-                </p>
-              </span>
+              <div className="flex justify-between items-center absolute bottom-4 left-4 right-4">
+                <span>
+                  <p className="text-sm font-medium text-gray-900 ">
+                    {`R$ ${product.price},00`}
+                  </p>
+                </span>
+                <AddToCart />
+              </div>
             </div>
           ))}
         </div>
