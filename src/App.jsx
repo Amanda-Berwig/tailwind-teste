@@ -9,8 +9,8 @@ function App() {
     <div>
       <StoreNavigation />
       <PromoSection />
-      <ProductList />
       <Swiper />
+      <ProductList />
     </div>
   );
 }

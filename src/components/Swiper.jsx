@@ -3,7 +3,9 @@ import { Navigation, Pagination } from "swiper/modules"; // IMPORTA OS MÓDULOS
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import SwiperSlideD from "./Slides/SwiperSlideD";
+import SlideDataFest from "./Slides/SlideDataFest";
+import SlideBeleza from "./Slides/SlideBeleza";
+import SlideCalcado from "./Slides/SlideCalcado";
 
 export default function MySwiper() {
   return (
@@ -15,10 +17,14 @@ export default function MySwiper() {
       slidesPerView={1}
     >
       <SwiperSlide>
-        <SwiperSlideD />
+        <SlideDataFest />
       </SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
+      <SwiperSlide>
+        <SlideBeleza />
+      </SwiperSlide>
+      <SwiperSlide>
+        <SlideCalcado />
+      </SwiperSlide>
       <SwiperSlide>Slide 5</SwiperSlide>
       <SwiperSlide>Slide 6</SwiperSlide>
     </Swiper>
