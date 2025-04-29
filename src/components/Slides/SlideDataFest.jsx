@@ -5,7 +5,6 @@ import ButtonComprar from "../ButtonComprar";
 const SlideDataFest = () => {
   return (
     <div className="relative">
-      {/* Texto centralizado sobre a imagem */}
       <p className="absolute text-red-700 text-5xl top-10 right-20 transform -translate-x-1/2 text-center">
         dia das <br />
         <span className="font-bold text-7xl">mães</span>
@@ -14,7 +13,6 @@ const SlideDataFest = () => {
         Presenteie quem você ama{" "}
       </p>
       <img src={BgMae} alt="" className="h-[450px] w-full" />
-      {/* Botão centralizado sobre a imagem */}
       <ButtonComprar />
     </div>
   );

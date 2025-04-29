@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import buscarDados from "./BuscarDados";
+import { useApi } from "./hooks/UseAPI";
 import AddToCart from "./AddToCart";
 
 // const products = [
@@ -17,16 +16,7 @@ import AddToCart from "./AddToCart";
 // ];
 
 export default function Example() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      const data = await buscarDados();
-      setProducts(data);
-      console.log(data); // Verifique os dados no console
-    }
-    fetchData();
-  }, []);
+  const { products } = useApi();
 
   return (
     <div className="bg-white">
