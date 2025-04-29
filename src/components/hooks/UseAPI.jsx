@@ -1,19 +1,23 @@
 import { useState, useEffect } from "react";
-import buscarDados from "../BuscarDados";
+import buscarDados from "../services/BuscarDados";
 
 export const useApi = () => {
   const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
-      const data = await buscarDados();
-      setProducts(data);
-      console.log(data); // Verifique os dados no console
+      const dataProducts = await buscarDados("products");
+      const dataCategories = await buscarDados("categories");
+
+      setCategories(dataCategories);
+      setProducts(dataProducts);
     }
     fetchData();
   }, []);
 
   return {
     products,
+    categories,
   };
 };
